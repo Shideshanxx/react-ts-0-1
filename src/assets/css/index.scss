@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(176, 240, 124);
+}
+
+@mixin wh($w: 100%, $h: 100%) {
+    width: $w;
+    height: $h;
+}
