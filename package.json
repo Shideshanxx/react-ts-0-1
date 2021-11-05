@@ -24,7 +24,6 @@
     "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime-corejs3": "^7.16.0",
     "@commitlint/cli": "^14.1.0",
-    "@commitlint/config-angular": "^13.2.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "@types/react": "^17.0.34",
@@ -71,19 +70,5 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "serve": "^13.0.2"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "yarn run lint",
-      "git add --force"
-    ],
-    "*.{md,json}": [
-      "git add --force"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
