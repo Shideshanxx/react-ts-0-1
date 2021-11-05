@@ -79,5 +79,10 @@
     "*.{md,json}": [
       "git add --force"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
   }
 }
