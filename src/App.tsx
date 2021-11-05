@@ -1,8 +1,6 @@
-import React from 'react'
-import './App.scss'
+import React from 'react';
+import './App.scss';
 
-const App = () => {
-    return <div className='app'>Hello  ssdcasc</div>
-}
+const App = () => <div className="app">Hello world</div>;
 
-export default App
+export default App;
