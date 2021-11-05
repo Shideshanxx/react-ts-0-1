@@ -9,7 +9,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js",
     "build": "webpack --config webpack/webpack.prod.js",
-    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js"
+    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
+    "lint": "eslint src/**/*.{ts,tsx} -f html --cache -o ./eslintError.html",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -20,6 +23,8 @@
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime-corejs3": "^7.16.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
@@ -39,6 +44,8 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "mini-css-extract-plugin": "^2.4.4",
     "postcss": "^8.3.11",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -63,5 +70,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "serve": "^13.0.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn run lint",
+      "git add --force"
+    ],
+    "*.{md,json}": [
+      "git add --force"
+    ]
   }
 }
