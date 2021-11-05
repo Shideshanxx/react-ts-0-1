@@ -2,17 +2,17 @@ const fs = require('fs');
 const packageConfig = require('../../package.json');
 
 function readFile(curPath) {
-    const content = fs.readFileSync(curPath, 'utf-8');
-    return content
+  const content = fs.readFileSync(curPath, 'utf-8');
+  return content;
 }
 
 /**
  * 获取版本
  * @export
  * @returns
-*/
+ */
 function getVersion() {
-    return packageConfig.version || '1.0.0';
+  return packageConfig.version || '1.0.0';
 }
 
 /**
@@ -22,7 +22,7 @@ function getVersion() {
  * @returns
  */
 function getTestVersion() {
-    return packageConfig.testVersion || '1.0.0';
+  return packageConfig.testVersion || '1.0.0';
 }
 
 /**
@@ -31,12 +31,12 @@ function getTestVersion() {
  * @returns
  */
 function getEnv() {
-    return process.env.NODE_ENV || 'dev';
+  return process.env.NODE_ENV || 'dev';
 }
 
 module.exports = {
-    readFile,
-    getVersion,
-    getTestVersion,
-    getEnv,
+  readFile,
+  getVersion,
+  getTestVersion,
+  getEnv,
 };

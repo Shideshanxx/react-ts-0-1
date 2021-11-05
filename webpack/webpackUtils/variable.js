@@ -1,4 +1,3 @@
-
 const path = require('path');
 const webpackUtils = require('./util');
 const dotenv = require('dotenv');
@@ -25,15 +24,15 @@ const IS_DEV = NODE_ENV === 'dev';
 const version = webpackUtils.getVersion();
 
 function getCDNPath() {
-    // 正式环境把所有资源上传到CND服务器上，加快访问速度
-    return IS_PRO ? `${process.env.CDN_ROOT}/${version}/` : './';
+  // 正式环境把所有资源上传到CND服务器上，加快访问速度
+  return IS_PRO ? `${process.env.CDN_ROOT}/${version}/` : './';
 }
 
 const ENV_CONFIG_PATH = path.resolve(ROOT_PATH, 'env', `${NODE_ENV}.env`);
 
 //webpack 读取env 配置
 loadConfig({
-    path: ENV_CONFIG_PATH,
+  path: ENV_CONFIG_PATH,
 });
 
 console.log('::NODE_ENV', NODE_ENV);
