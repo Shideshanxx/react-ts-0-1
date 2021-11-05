@@ -1,0 +1,6 @@
+{
+  // eslint自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}
